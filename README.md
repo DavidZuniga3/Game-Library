@@ -1,4 +1,7 @@
 # Game-Library
+This project is a game library website that lets the users learn about videogames and lets them view and review them.
+This project is meant to resemble popular review websites and apps, such as Letterboxd.
+
 Midterm project for CSC321
 Name: David Zuniga
 Course: CSC321-B
