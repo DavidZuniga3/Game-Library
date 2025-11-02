@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Midterm Project</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="setup.js"></script>
+    </head>
+    <body>
+        <!--Navigation Bar-->
+        <ul id="navBar">
+            <li><a href="HomePage.html">Home</a></li>
+            <li style="text-align:center;">Game Library, David Zuniga(812015)</li>
+            <li style="float:right"><a class="account" href="signIn.php">Account</a></li>
+            <!--Search Bar-->
+            <li style="float:right; border:none;">
+                <form id="search" method="get" action="search.php" style="margin:0; padding:10px;">
+                    <input type="text" name="searchGame" placeholder="Search for games..." required>
+                    <button type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+
+        <div id = "grid" class = "grid"></div>
+        
+    </body>
+</html>

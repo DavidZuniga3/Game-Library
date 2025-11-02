@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Game Description</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--Navigation Bar-->
+        <ul id="navBar">
+            <li><a href="HomePage.html">Home</a></li>
+            <li style="float:right"><a class="account" href="signIn.php">Account</a></li>
+            <!--Search Bar-->
+            <li style="float:right; border:none;">
+                <form id="search" method="get" action="search.php" style="margin:0; padding:10px;">
+                    <input type="text" name="searchGame" placeholder="Search for games..." required>
+                    <button type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+
+        <div id = "description"></div>
+        
+        <script>
+            let urlSearch = new URLSearchParams(window.location.search);
+            let gameId = parseInt(urlSearch.get("id"));
+
+            fetch("games.json")
+            .then(response => response.json())
+            .then(function(data){
+                setupDesc(data);
+            });
+
+            function setupDesc(gamesList)
+            {
+                let game = gamesList.find(checkGames)
+
+                if(game)
+                {
+                    document.getElementById("description").innerHTML = `
+                    <h1>${game.title}</h1> 
+                    <img src ="${game.image}" style="width:400px"> 
+                    <p>${game.description}</p>
+                    <div><h3>Leave a Review</h3>
+                    <textarea id="reviewText" placeholder="Write review here..." rows="5"></textarea><br>
+                    <button onclick="Review()">Submit</button></div>
+                    <h4>Reviews:</h4>
+                    <ul id="reviewList"></ul>`;
+                }
+                else
+                {
+                    document.getElementById("description").innerHTML = "<p>Error Getting Game info.</p>";
+                }
+            }
+
+            function checkGames(val)
+            {
+                return val.id === gameId;
+            }
+
+            function Review()
+            {
+                //Alerts that the user submitted a review
+                alert("You left a review.");
+
+                //gets the review that user left
+                let review = document.getElementById("reviewText").value.trim();
+
+                let list = document.getElementById("reviewList");
+
+                // Creates a list element
+                let newReview = document.createElement("li");
+                newReview.textContent = review;
+
+                // Adds to the list of reviews
+                list.appendChild(newReview);
+
+                // Clear text box
+                document.getElementById("reviewText").value = "";
+            }
+        </script>
+    </body>
+</html>
