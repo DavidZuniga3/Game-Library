@@ -4,6 +4,7 @@ This project is meant to resemble popular review websites and apps, such as Lett
 
 Midterm project for CSC321
 Name: David Zuniga
+ID: 812015
 Course: CSC321-B
 
 For the front end portion of this project, HTML, JavaScript, and CSS were used. 
