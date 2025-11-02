@@ -15,7 +15,7 @@ Future plans for this project includes making a database to store and collect da
 For this project I used PHP and XAMPP to actually display the page and use the back end features that were implemented with PHP.
 I plan to continue using PHP and XAMPP, as well as use MYSQL for the databases.
 For the Database schema:
-User:              id, userName, email, encrypted password,
-game:              id, title, description, genre, year, image,
-review:            id, gameId, userId, rating, reviewText,
-likes:             id, userId, gameId,
+User:              id, userName, email, encrypted password|
+game:              id, title, description, genre, year, image|
+review:            id, gameId, userId, rating, reviewText|
+likes:             id, userId, gameId|
